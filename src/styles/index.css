@@ -1,3 +1,5 @@
-/* 
-    General Styles
-*/
+.footerStyle{
+    clear: both;
+    position: relative;
+      margin-top: -78px;
+}
