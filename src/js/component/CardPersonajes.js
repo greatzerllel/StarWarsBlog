@@ -1,10 +1,11 @@
-import React, {useContext } from "react";
+import React, {useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../store/appContext";
 
 const CardPersonajes = ({name, uid}) => {
   
   const {actions} = useContext(AppContext);
+  const [favorite, setFavorite] = useState(0)
 
   return (
     <div className="card" id="cartas">
@@ -22,7 +23,7 @@ const CardPersonajes = ({name, uid}) => {
         >
           Ver más
         </Link>
-        <button type="button" className="add-favoritos btn btn-light" onClick={() => actions.agregarFavoritos({uid, name, type:"personaje"})}>Add Favoritos</button>
+        <button type="button" className="add-favoritos btn btn-light" onClick={() => actions.agregarFavoritos({uid, name, type:"personaje"})}><i class="fa-regular fa-heart"></i></button>
 
       </div>
     </div>
