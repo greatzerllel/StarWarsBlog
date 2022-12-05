@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
+import ScrollToTop from "./component/ScrollToTop";
 import { Home } from "./views/home";
 import injectContext from "./store/appContext";
-import  Navbar  from "./component/navbar";
+import  Navbar  from "./component/Navbar";
 import Personajes from "./views/Personajes";
 import Footer from "./component/Footer";
 import Vehiculos from "./views/Vehiculos";
