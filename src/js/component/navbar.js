@@ -4,7 +4,7 @@ import { AppContext } from "../store/appContext";
 import Dropdown from "./dropdown";
 
 const Navbar = () => {
-  const { store } = useContext(AppContext);
+  const { store, actions } = useContext(AppContext);
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
@@ -59,7 +59,7 @@ const Navbar = () => {
               {!!store.favoritos &&
                 store.favoritos.length > 0 &&
                 store.favoritos.map(({ name, uid, type }, index) => {
-                  return <Dropdown name={name} uid={uid} key={uid+index} type={type}/>;
+                  return <><div className="d-flex"><Dropdown name={name} uid={uid} key={uid+index} type={type}/> <button className="me-2 mb-2" type="button" onClick={() => {actions.eliminarFavoritos(index)}}><i class="fa-solid fa-trash"></i></button></div></>;
                 })}
             </ul>
           </div>
