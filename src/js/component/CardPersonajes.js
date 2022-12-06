@@ -6,6 +6,7 @@ const CardPersonajes = ({name, uid}) => {
   
   const {actions} = useContext(AppContext);
   const [favorite, setFavorite] = useState(0)
+  const [icon, setIcon] = useState("regular")
 
   return (
     <div className="card" id="cartas">
@@ -23,8 +24,8 @@ const CardPersonajes = ({name, uid}) => {
         >
           Ver más
         </Link>
-        <button type="button" className="add-favoritos btn btn-light" onClick={() => actions.agregarFavoritos({uid, name, type:"personaje"})}><i class="fa-regular fa-heart"></i></button>
-
+            <button type="button" className="add-favoritos btn btn-light" onClick={() => {(actions.agregarFavoritos({uid, name, type:"personaje"})), icon === "regular" ? setIcon("solid") : setIcon("regular") }}><i className={`fa-${icon} fa-heart`}></i></button>
+            <button type="button" onClick={() => {actions.eliminarFavoritos({uid})}}></button>
       </div>
     </div>
   );

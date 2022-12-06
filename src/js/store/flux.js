@@ -59,7 +59,12 @@ const getState = ({ getStore, setStore }) => {
                 const favoritosActualizado = [favorito, ...favoritos];
                 setStore({ favoritos: favoritosActualizado });
 
-            }
+            },
+            eliminarFavoritos: (uid) => {
+              const { favoritos } = getStore();                 
+              setStore({favoritos: favoritos.pop(uid), ...favoritos})
+              console.log(favoritos, uid);
+            } 
 
         }
 
